@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-This module provides a function to add two floating-point numbers and return their sum.
+This module provides a function to add two floating-point numbers and return
+their sum.
 """
 
 
