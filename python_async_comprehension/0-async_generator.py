@@ -13,8 +13,6 @@ async def async_generator():
     Asynchronously yields a random float between 0 and 10 after waiting
     1 second, repeated 10 times.
     """
-    max_delay: int = 10
     for _ in range(10):
-        delay = random.uniform(0, max_delay)
         await asyncio.sleep(1)
-        yield delay
+        yield random.uniform(0, 10)
