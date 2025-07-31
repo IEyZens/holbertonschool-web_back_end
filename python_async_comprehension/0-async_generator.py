@@ -4,9 +4,9 @@ This module provides an asynchronous generator that yields random numbers
 after waiting 1 second for each of 10 iterations.
 """
 
-import random
 import asyncio
 import typing
+import random
 
 
 async def async_generator() -> typing.AsyncGenerator[float, None]:
