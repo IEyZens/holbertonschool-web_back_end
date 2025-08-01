@@ -16,7 +16,4 @@ async def async_comprehension() -> typing.List[float]:
     an async comprehension and returns them as a list. This function shows how
     to gather values produced asynchronously into a single collection.
     """
-    result = []
-    async for value in async_generator():
-        result.append(value)
-    return result
+    return [i async for i in async_generator()]
