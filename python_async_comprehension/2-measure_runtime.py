@@ -18,13 +18,13 @@ async def measure_runtime() -> float:
     function demonstrates how concurrency with asyncio.gather can optimize
     runtime for multiple asynchronous tasks.
     """
-    start = time.time()
+    start = time.perf_counter()
     await asyncio.gather(
         async_comprehension(),
         async_comprehension(),
         async_comprehension(),
         async_comprehension()
     )
-    end = time.time()
+    end = time.perf_counter()
     total = end - start
     return total
