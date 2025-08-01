@@ -12,7 +12,7 @@ import typing
 import random
 
 
-async def async_generator() -> typing.Generator[float, None, None]:
+async def async_generator() -> typing.AsyncGenerator[float, None]:
     """
     Asynchronously yields a random floating-point number between 0 and 10,
     waiting one second between each value. This function demonstrates the use
