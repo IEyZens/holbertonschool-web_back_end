@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
-Module that provides a simple helper function for pagination.
+Module that provides simple pagination functionality.
 
-This module defines the index_range function, which calculates
-the start and end indexes for a given page number and page size.
+It defines:
+- index_range: Helper function to compute start and end indexes for pagination.
+- Server: A class to paginate a dataset of popular baby names from a CSV file.
 """
 
 import csv
@@ -13,15 +14,15 @@ from typing import List
 
 def index_range(page, page_size) -> tuple:
     """
-    Return a tuple containing the start and end indexes for pagination.
+    Compute the start and end indexes for a given pagination request.
 
     Args:
         page (int): The current page number (1-indexed).
         page_size (int): The number of items per page.
 
     Returns:
-        tuple: A tuple containing the start index and the end index for the
-        given pagination parameters.
+        tuple: A tuple containing the start index and the end index for
+               the given pagination parameters.
     """
     start = (page - 1) * page_size
     end = start + page_size
@@ -29,7 +30,13 @@ def index_range(page, page_size) -> tuple:
 
 
 class Server:
-    """Server class to paginate a database of popular baby names.
+    """
+    Server class to paginate a database of popular baby names.
+
+    Attributes:
+        DATA_FILE (str): Path to the CSV file containing the dataset.
+        __dataset (List[List] or None): Cached dataset loaded from the CSV
+        file.
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
@@ -37,7 +44,14 @@ class Server:
         self.__dataset = None
 
     def dataset(self) -> List[List]:
-        """Cached dataset
+        """
+        Load and cache the dataset from the CSV file.
+
+        The dataset is read only once and stored in memory. The header row
+        of the CSV file is skipped.
+
+        Returns:
+            List[List]: The cached dataset as a list of rows.
         """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
@@ -48,6 +62,19 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        Retrieve a specific page of the dataset.
+
+        Args:
+            page (int): The page number to retrieve (1-indexed).
+                        Must be a positive integer.
+            page_size (int): The number of items per page.
+                             Must be a positive integer.
+
+        Returns:
+            List[List]: A list of rows corresponding to the requested page.
+                        Returns an empty list if the page is out of range.
+        """
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
 
