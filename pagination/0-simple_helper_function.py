@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
-def index_range(page, page_size) -> tuple:
+from typing import Tuple
+
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
     Return a tuple containing the start and end indexes for pagination.
 
