@@ -1,2 +1,2 @@
-// commentary
+// Script to list all databases in MongoDB
 show dbs
