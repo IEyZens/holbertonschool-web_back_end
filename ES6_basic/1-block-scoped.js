@@ -3,10 +3,7 @@ export default function taskBlock(trueOrFalse) {
   const task2 = true;
 
   if (trueOrFalse) {
-    const task = true;
-    const task2 = false;
-
-    [task, task2];
+    // variables inside should not overwrite the outer ones
   }
 
   return [task, task2];
