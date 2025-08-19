@@ -1,8 +1,9 @@
 export default function appendToEachArrayValue(array, appendString) {
-  const tableau = []
+  let i = 0;
   for (const value of array) {
-    tableau.push(appendString + value);
+    array[i] = appendString + value;
+    i += 1;
   }
 
-  return tableau;
+  return array;
 }
