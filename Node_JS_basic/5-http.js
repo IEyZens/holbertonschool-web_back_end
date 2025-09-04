@@ -12,13 +12,13 @@ const app = http.createServer((req, res) => {
         return;
       }
 
-      res.write('This is the list of our students\n');
+      // Commence la chaîne de sortie
+      let output = 'This is the list of our students\n';
 
       const lines = data.split('\n').filter((line) => line.trim() !== '');
-
       const students = lines.slice(1);
 
-      res.write(`Number of students: ${students.length}\n`);
+      output += `Number of students: ${students.length}\n`;
 
       const fields = {};
 
@@ -34,10 +34,10 @@ const app = http.createServer((req, res) => {
       });
 
       for (const [field, names] of Object.entries(fields)) {
-        res.write(`Number of students in ${field}: ${names.length}. List: ${names.join(', ')}\n`);
-      };
+        output += `Number of students in ${field}: ${names.length}. List: ${names.join(', ')}\n`;
+      }
 
-      res.end();
+      res.end(output);
     });
   }
 });
