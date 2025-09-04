@@ -3,6 +3,6 @@ process.stdin.on('data', data => {
   console.log(`Your name is: ${data.toString().trim()}`);
 })
 
-process.stdin.on('end', end => {
+process.stdin.on('end', () => {
   console.log('This important software is now closing');
 })
