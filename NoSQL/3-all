@@ -1,0 +1,2 @@
+// A commentary
+db.school.find({})
