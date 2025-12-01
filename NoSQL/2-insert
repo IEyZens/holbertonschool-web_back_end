@@ -1,2 +1,2 @@
 // A commentary
-db.collection.insert(school, { name: "Holberton School" })
+db.collection.insertOne(school, {name: "Holberton School"})
