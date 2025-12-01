@@ -1,0 +1,2 @@
+// A commentary
+db.collection.insert(school, { name: "Holberton School" })
