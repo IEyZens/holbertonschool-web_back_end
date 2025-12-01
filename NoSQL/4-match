@@ -1,2 +1,2 @@
 // A commentary
-db.school.find({name: { $exists: "Holberton School" }})
+db.school.find({name: { $exists: "Holberton school" }})
