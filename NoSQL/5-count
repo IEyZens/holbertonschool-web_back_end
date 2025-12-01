@@ -1,2 +1,2 @@
 // A commentary
-db.school.countDocument({})
+db.school.countDocuments()
