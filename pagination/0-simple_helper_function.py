@@ -2,7 +2,7 @@
 """Simple helper function for pagination."""
 
 
-def index_range(page: int, page_size: int):
+def index_range(page: int, page_size: int) -> tuple:
     """Return a tuple of start and end index for pagination."""
     start_index = (page - 1) * page_size
     end_index = start_index + page_size
