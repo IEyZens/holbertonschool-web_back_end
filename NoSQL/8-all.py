@@ -4,11 +4,11 @@
 
 def list_all(mongo_collection):
     """List all documents in a MongoDB collection."""
-    if not mongo_collection:
-        return []
-
-    for m in mongo_collection:
-        print(m)
+    for m in mongo_collection.find():
+        if not m:
+            return []
+        else:
+            print(m)
 
 
 if __name__ == "__main__":
