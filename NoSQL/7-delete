@@ -1,2 +1,2 @@
 // A commentary
-db.school.remove({ name: "Holberton school" }, { multi: true })
+db.school.deleteMany({ name: "Holberton school" }, { multi: true })
