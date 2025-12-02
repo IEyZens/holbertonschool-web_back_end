@@ -4,8 +4,8 @@
 
 def list_all(mongo_collection):
     """List all documents in a MongoDB collection."""
-    for i in mongo_collection:
-        print(i)
+    for m in mongo_collection.find():
+        print(m)
 
 
 if __name__ == "__main__":
