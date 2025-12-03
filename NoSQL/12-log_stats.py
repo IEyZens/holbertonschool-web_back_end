@@ -24,10 +24,10 @@ if __name__ == "__main__":
 
     print('Methods:')
 
-    print('method GET:', GET)
-    print('method POST:', POST)
-    print('method PUT:', PUT)
-    print('method PATCH:', PATCH)
-    print('method DELETE:', DELETE)
+    print('\tmethod GET:', GET)
+    print('\tmethod POST:', POST)
+    print('\tmethod PUT:', PUT)
+    print('\tmethod PATCH:', PATCH)
+    print('\tmethod DELETE:', DELETE)
 
     print(status, 'status check')
