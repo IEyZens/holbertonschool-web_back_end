@@ -4,6 +4,5 @@
 
 def schools_by_topic(mongo_collection, topic):
     """Returns the list of school having a specific topic"""
-    specTopic = list(mongo_collection.find({"topic": topic}))
-    for topics in specTopic:
-        return specTopic.append(topics)
+    specTopic = list(mongo_collection.find({'topic': {'$regex': topic}}))
+    return specTopic
