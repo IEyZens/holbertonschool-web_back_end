@@ -1,7 +1,3 @@
-export default function returnHowManyArguments(a, b, ...dateArgument) {
-  console.log('a', a);
-  console.log('b', b);
-  console.log(dateArgument);
+export default function returnHowManyArguments(...numberArguments) {
+  return numberArguments.length;
 }
-
-returnHowManyArguments('Hello', 'Holberton', 2020);
