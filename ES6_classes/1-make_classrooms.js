@@ -7,5 +7,5 @@ export default function initializeRooms() {
     { maxStudentsSize: 34 }
   ];
 
-  return threeClass(ClassRoom);
+  return initializeRooms(threeClass);
 }
