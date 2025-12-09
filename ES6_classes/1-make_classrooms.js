@@ -1,5 +1,11 @@
 import ClassRoom from './0-classroom.js';
 
 export default function initializeRooms() {
-  return ClassRoom(this.maxStudentsSize(19, 20, 34));
+  const threeClass = [
+    { maxStudentsSize: 19 },
+    { maxStudentsSize: 20 },
+    { maxStudentsSize: 34 }
+  ];
+
+  return ClassRoom(threeClass);
 }
