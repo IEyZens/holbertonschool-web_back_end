@@ -12,13 +12,13 @@ export default class HolbertonClass {
     this._location = location;
   }
 
-  get [parseInt(HolbertonClass)]() {
+  get size() {
     if (HolbertonClass === parseInt) {
       return size;
     }
   }
 
-  get [(HolbertonClass).toString]() {
+  get location() {
     if (HolbertonClass === toString) {
       return location;
     }
