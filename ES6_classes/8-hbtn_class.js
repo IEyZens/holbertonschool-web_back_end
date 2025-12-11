@@ -23,4 +23,8 @@ export default class HolbertonClass {
       return location;
     }
   }
+
+  get [Symbol.toStringTag]() {
+    return this._location;
+  }
 }
