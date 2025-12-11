@@ -1,4 +1,4 @@
-class Currency {
+export default class Currency {
   constructor(code, name) {
     this.code = code;
     this.name = name;
@@ -26,5 +26,3 @@ class Currency {
     return `${this._name} (${this._code})`
   }
 }
-
-Currency();
