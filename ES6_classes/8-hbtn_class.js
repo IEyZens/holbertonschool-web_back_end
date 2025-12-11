@@ -12,15 +12,9 @@ export default class HolbertonClass {
     this._location = location;
   }
 
-  get size() {
-    if (HolbertonClass === parseInt) {
-      return size;
-    }
-  }
-
-  get location() {
-    if (HolbertonClass === toString) {
-      return location;
+  get [Symbol.toPrimitive]() {
+    if (this.size === 'number') {
+      return this._size;
     }
   }
 
