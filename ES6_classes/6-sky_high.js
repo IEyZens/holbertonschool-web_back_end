@@ -1,8 +1,8 @@
 import Building from './5-building.js';
 
 export default class SkyHighBuilding extends Building {
-  constructor(floors) {
-    super(this.sqft);
+  constructor(sqft, floors) {
+    super(sqft);
 
     if (typeof floors !== 'number') {
       throw new TypeError('It must be an integer.');
