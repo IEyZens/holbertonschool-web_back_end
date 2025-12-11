@@ -11,6 +11,6 @@ export default class Airport {
     this._name = name;
     this._code = code;
 
-    return `Airport ${[Object.prototype.toString('SFO')]} { ${this._name}, ${this._code} }`;
+    return `Airport ${[Object.toString('SFO')]} { ${this._name}, ${this._code} }`;
   }
 }
