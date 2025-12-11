@@ -13,19 +13,13 @@ class Currency {
   }
 
   set code(code) {
-    if (typeof code !== 'string') {
-      throw new TypeError('It must be a string.')
-    } else {
-      this._code = code;
-    }
+    this._code = code;
+
   }
 
   set name(name) {
-    if (typeof name !== 'string') {
-      throw new TypeError('It must be a string.')
-    } else {
-      this._name = name;
-    }
+    this._name = name;
+
   }
 
   displayFullCurrency() {
