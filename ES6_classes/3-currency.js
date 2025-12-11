@@ -33,4 +33,4 @@ class Currency {
   }
 }
 
-Currency();
+new Currency();
