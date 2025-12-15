@@ -1,5 +1,5 @@
 export default function getListStudentIds(id) {
-  if (id === null) {
+  if (id === null || typeof id === 'string' || id === undefined) {
     return [];
   }
 
