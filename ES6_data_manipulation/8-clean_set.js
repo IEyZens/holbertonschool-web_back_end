@@ -1,3 +1,3 @@
 export default function cleanSet(set, startString) {
-  return startString.filter(startString.join('-'));
+  return set.filter(startString.join('-'));
 }
