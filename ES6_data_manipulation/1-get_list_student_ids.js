@@ -4,6 +4,6 @@ export default function getListStudentIds([{ arrayId }]) {
   if (typeof arrayId !== 'object') {
     return []
   } else {
-    return arrayId.map(getListStudents);
+    return arrayId.map(getListStudents());
   }
 }
