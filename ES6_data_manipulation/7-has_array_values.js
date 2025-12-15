@@ -4,6 +4,6 @@ export default function hasValuesFromArray(set, array) {
   } else if (array !== set) {
     return false;
   } else {
-    return true;
+    return false;
   }
 }
