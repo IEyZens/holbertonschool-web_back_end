@@ -1,3 +1,3 @@
 export default function getStudentsByLocation(listStudents, city) {
-  return listStudents.filter(typeof city === 'string');
+  return listStudents.filter(s => s.city);
 }
