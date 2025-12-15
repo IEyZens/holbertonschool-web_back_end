@@ -1,5 +1,5 @@
 export default function createInt8TypedArray(length, position, value) {
-  const buffer = new ArrayBuffer(length, position, value);
-
-  return new Int8Array(buffer);
+  let buffer = new ArrayBuffer(length);
+  buffer[position] = value;
+  return buffer;
 }
