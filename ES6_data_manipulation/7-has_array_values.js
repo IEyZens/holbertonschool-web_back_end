@@ -1,5 +1,7 @@
 export default function hasValuesFromArray(set, array) {
-  if (set === array) {
+  if (array === set) {
+    return true;
+  } else if (array !== set) {
     return true;
   } else {
     return false;
