@@ -1,7 +1,7 @@
-export default function groceriesList() {
-  const groceries = new Map();
+export default function groceriesList(groceries) {
+  const map = new Map();
 
-  groceries.forEach(g => groceries.set(g.name, g.quantity));
+  groceries.forEach(g => map.set(g.name, g.quantity));
 
-  return set;
+  return map;
 }
