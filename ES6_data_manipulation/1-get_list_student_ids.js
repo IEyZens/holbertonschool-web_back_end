@@ -1,3 +1,9 @@
+import getListStudents from './0-get_list_students.js';
+
 export default function getListStudentIds([{ arrayId }]) {
-  return arrayId.map((a) => a.arrayId);
+  if (typeof arrayId !== 'object') {
+    return []
+  } else {
+    return arrayId.map(getListStudents);
+  }
 }
