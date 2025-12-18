@@ -1,3 +1,5 @@
 function getResponseFromAPI() {
-  return Promise.resolve(getResponseFromAPI());
+  return new Promise((resolve) => {
+    resolve("OK");
+  });
 }
