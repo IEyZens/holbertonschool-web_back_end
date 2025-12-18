@@ -1,5 +1,3 @@
 function getResponseFromAPI() {
-  const result = getResponseFromAPI();
-
-  return result;
+  return new Promise();
 }
