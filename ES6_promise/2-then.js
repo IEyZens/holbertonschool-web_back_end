@@ -1,5 +1,7 @@
 export default function handleResponseFromAPI(promise) {
   promise = new Promise((resolve, reject) => {
+    const success = true;
+
     if (success == true) {
       resolve({
         status: 200,
