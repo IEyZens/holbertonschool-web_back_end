@@ -1,7 +1,7 @@
 import { createUser, uploadPhoto } from "./utils.js";
 
 export default function handleProfileSignup() {
-  const p1 = Promise.revole(createUser);
+  const p1 = Promise.resolve(createUser);
   const p2 = Promise.resolve(uploadPhoto);
 
   const p3 = new Promise((resolve, reject) => {
