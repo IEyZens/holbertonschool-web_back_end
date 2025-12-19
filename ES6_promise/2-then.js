@@ -5,7 +5,7 @@ export default function handleResponseFromAPI(promise) {
     });
 
     promise.catch(() => {
-      reject(new Error());
+      reject((e) => new Error(e));
     });
 
     promise.finally(() => {
