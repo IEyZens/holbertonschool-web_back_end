@@ -1,18 +1,18 @@
-const fs = require('node:fs');
+const fs = require("node:fs");
 
 function countStudents(filepath) {
   try {
-    const data = fs.readFileSync(filepath, 'utf8');
+    const data = fs.readFileSync(filepath, "utf8");
 
-    const lines = data.split(/\r?\n/).filter((line) => line.trim() !== '');
+    const lines = data.split(/\r?\n/).filter((line) => line.trim() !== "");
 
     if (lines.length === 0) return;
 
-    const headers = lines[0].split(',');
+    const headers = lines[0].split(",");
 
     const students = lines
       .slice(1)
-      .map((line) => line.split(','))
+      .map((line) => line.split(","))
       .filter((cols) => cols.length === headers.length);
 
     const fields = {};
@@ -35,11 +35,11 @@ function countStudents(filepath) {
     for (const [field, names] of Object.entries(fields)) {
       const msg = `Number of students in ${field}: ${
         names.length
-      }. List: ${names.join(', ')}`;
+      }. List: ${names.join(", ")}`;
       console.log(msg);
     }
   } catch (err) {
-    throw new Error('Cannot load the database');
+    throw new Error("Cannot load the database");
   }
 }
 
