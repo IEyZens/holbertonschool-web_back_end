@@ -1,3 +1,6 @@
-process.stdin.write("Welcome to Holberton School, what is your name?\n");
-console.log(`Your name is: ${INPUT}`);
-console.log("This important software is now closing\n");
+console.log("Welcome to Holberton School, what is your name?");
+
+process.stdin.on("data", (data) => {
+  console.log(`Your name is: ${data}`);
+  process.exit(console.log("This important software is now closing"));
+});
