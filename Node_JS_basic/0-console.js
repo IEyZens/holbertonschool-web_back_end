@@ -1,5 +1,5 @@
 export default function displayMessage() {
-  process.stdout.write(displayMessage);
+  console.log(process.stdout.write);
 }
 
 module.exports = displayMessage;
