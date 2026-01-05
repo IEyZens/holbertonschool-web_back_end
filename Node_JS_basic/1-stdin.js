@@ -1,6 +1,10 @@
-console.log("Welcome to Holberton School, what is your name?");
+function inputName() {
+  console.log("Welcome to Holberton School, what is your name?");
 
-process.stdin.on("data", (data) => {
-  process.stdout.write(`Your name is: ${data}`);
-  process.exit(console.log("This important software is now closing"));
-});
+  process.stdin.on("data", (data) => {
+    process.stdout.write(`Your name is: ${data}`);
+    process.exit(console.log("This important software is now closing"));
+  });
+}
+
+module.exports = inputName;
