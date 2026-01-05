@@ -1,14 +1,46 @@
 const fs = require('node:fs');
 
 function countStudents(filepath) {
-  const data = fs.readFileSync('./database.csv', 'utf8');
+  try {
+    const data = fs.readFileSync(filepath, 'utf8');
 
-  if (!data) {
-    console.log('Cannot load the database');
-  } else {
-    console.log(`Number of students: ${filepath}`);
+    const lines = data.split(/\r?\n/).filter((line) => line.trim() !== '');
+
+    if (lines.length === 0) return;
+
+    const headers = lines[0].split(',');
+
+    const students = lines
+      .slice(1)
+      .map((line) => line.split(','))
+      .filter((cols) => cols.length === headers.length);
+
+    const fields = {};
+
+    for (const student of students) {
+      const entry = {};
+      headers.forEach((h, i) => {
+        entry[h.trim()] = student[i].trim();
+      });
+
+      const { field, firstname } = entry;
+      if (!fields[field]) {
+        fields[field] = [];
+      }
+      fields[field].push(firstname);
+    }
+
+    console.log(`Number of students: ${students.length}`);
+
+    for (const [field, names] of Object.entries(fields)) {
+      const msg = `Number of students in ${field}: ${
+        names.length
+      }. List: ${names.join(', ')}`;
+      console.log(msg);
+    }
+  } catch (err) {
+    throw new Error('Cannot load the database');
   }
-  console.log(`Number of students in FIELD: ${filepath}. List: ${filepath}`);
 }
 
 module.exports = countStudents;
